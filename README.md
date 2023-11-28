@@ -15,9 +15,7 @@ If you want to follow with example fastq files, they are included in this repo.
 
 #Running!
 
-  git clone:
-  
-  cd BBTOOLS
+  git clone: https://github.com/applesandberries/BBTOOLS.git
   
   python3 bbtools.py
 
