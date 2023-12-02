@@ -1,0 +1,13 @@
+# here we begin the coding portion of today
+#lets begin with simple bbduk trimming and filtering
+./bbduk.sh in1=examplefileR1.fastq in2=examplefileR2.fastq out1=clean1.fq out2=clean2.fq 
+#lets filter and trim using kmers!
+./bbduk.sh -Xmx1g in1=examplefileR1.fastq in2=examplefileR2.fastq out1=clean1.fq out2=clean2.fq ktrim=r k=23 mink=11 hdist=1 tpe tbo
+#lets calculate the coverage of our files using bbmap
+./bbmap.sh in1=examplefileR1.fastq in2=examplefileR2.fastq covstats=constats.txt covhist=covhist.txt basecov=basecov.txt bincov=bincov.txt
+#lets merge our data because why not?
+./bbmerge.sh in1=examplefileR1.fastq in2=examplefileR2.fastq out=merged.fq outu=unmerged.fq ihist=ihist.txt
+# lets try interleaving out data                                                                                                                               
+./reformat.sh in1=examplefileR1.fastq in2=examplefileR2.fastq out=interleaved.fq overwrite=true
+#what if we need to de-interleave it?
+./reformat.sh in1=interleaved.fq out1=r1.fq out2=r2.fq                                                                                                                              
