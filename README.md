@@ -9,14 +9,9 @@ Before running this code you will need:
   
   bbtools
 
+  paired end fastq files
+
 #Running an example
 
-If you want to follow with example fastq files, they are included in this repo.
+Follow with your own fast q files. Many example ones are available via google machine
 
-#Running!
-
-  git clone: https://github.com/applesandberries/BBTOOLS.git
-  
-  python3 bbtools.py
-
-#Produced
